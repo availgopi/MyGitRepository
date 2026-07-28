@@ -1,0 +1,24 @@
+Database Connection Troubleshooting Guide
+
+
+Problem:
+SQL connection timeout in Payment API.
+
+
+Possible Cause:
+Database connection pool exhaustion.
+
+
+Resolution Steps:
+
+1. Check active database connections.
+
+2. Increase SQL connection pool size.
+
+3. Restart Payment API service.
+
+4. Monitor database CPU utilization.
+
+
+Owner:
+Database Support Team

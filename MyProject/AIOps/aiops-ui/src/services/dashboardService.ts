@@ -10,6 +10,7 @@ export interface Incident {
     approval_required: boolean;
     approval: boolean;
     execution_result: string | null;
+    rejection_reason: string | null;
 
 }
 

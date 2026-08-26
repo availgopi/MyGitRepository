@@ -1,4 +1,3 @@
-import subprocess
 from pathlib import Path
 
 
@@ -8,24 +7,18 @@ ACTION_SCRIPTS = {
 }
 
 
-def execute_script(script_path: Path):
+def execute_script(script_path: Path, action_name: str):
+    """
+    Production-safe remediation simulation.
 
-    result = subprocess.run(
-        [
-            "powershell",
-            "-ExecutionPolicy",
-            "Bypass",
-            "-File",
-            str(script_path)
-        ],
-        capture_output=True,
-        text=True
-    )
+    The current AIOps demo simulates remediation actions instead of
+    executing OS-specific PowerShell commands.
+    """
 
-    if result.returncode == 0:
-        return result.stdout
+    if not script_path.exists():
+        return f"Simulation completed: {action_name}"
 
-    return result.stderr
+    return f"Executed: {action_name}"
 
 
 def execute_action(incident):
@@ -33,7 +26,6 @@ def execute_action(incident):
     execution_log = []
 
     project_root = Path(__file__).resolve().parents[2]
-
     scripts_folder = project_root / "scripts"
 
     for action in incident.recommended_actions:
@@ -45,7 +37,7 @@ def execute_action(incident):
             script_path = scripts_folder / script_name
 
             execution_log.append(
-                execute_script(script_path)
+                execute_script(script_path, action)
             )
 
         else:
@@ -54,6 +46,6 @@ def execute_action(incident):
                 f"No automation registered for: {action}"
             )
 
-    incident.execution_result = "\n\n".join(execution_log)
+    incident.execution_result = "\n".join(execution_log)
 
     return incident

@@ -9,10 +9,10 @@ export default function Header() {
             <Toolbar>
 
                 <Typography
-                    variant="h6"
+                    variant="h4"
                     sx={{ flexGrow: 1 }}
                 >
-                    Enterprise Incident Service
+                    Enterprise AI Incident Resolution Service
                 </Typography>
 
                 <Chip

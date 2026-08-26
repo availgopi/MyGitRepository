@@ -4,6 +4,7 @@ import {
   CircularProgress,
   Typography
 } from "@mui/material";
+
 interface Props {
     open: boolean;
     message?: string;
@@ -19,7 +20,7 @@ export default function LoadingOverlay({
             open={open}
             sx={{ zIndex: 9999, color: "#fff" }}
         >
-            <Stack alignItems="center" spacing={2}>
+            <Stack sx={{ alignItems: "center" }} spacing={2}>
                 <CircularProgress color="inherit" />
 
                 <Typography sx={{ mt: 2 }}>

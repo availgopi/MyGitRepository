@@ -1,8 +1,3 @@
-import {
-    Container,
-    Grid,
-    Typography
-} from "@mui/material";
 import { useEffect, useState } from "react";
 import { getIncidents, type Incident} from "../services/dashboardService";
 import Header from "../components/Header";
@@ -10,6 +5,10 @@ import DashboardCard from "../components/DashboardCard";
 import IncidentTable from "../components/IncidentTable";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import {
+    Container,
+    Grid
+} from "@mui/material";
 
 
 
@@ -69,19 +68,6 @@ export default function Dashboard() {
                 sx={{ mt: 4 }}
             >
 
-                <Typography
-                    variant="h4"
-                    gutterBottom
-                >
-                    Dashboard
-                </Typography>
-
-                <Typography
-                    color="text.secondary"
-                    sx={{ mb: 4 }}
-                >
-                    Enterprise Incident Service
-                </Typography>
 
                 <Button
                     variant="contained"
@@ -99,7 +85,7 @@ export default function Dashboard() {
 
                     <Grid size={{ xs: 12, md: 3 }}>
                         <DashboardCard
-                            title="Incidents"
+                            title="Total Incidents"
                             value={total}
                         />
                     </Grid>

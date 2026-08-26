@@ -7,7 +7,6 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
 import IncidentForm from "../components/IncidentForm";
 import IncidentReport from "../components/IncidentReport";
 
@@ -50,14 +49,11 @@ export default function AnalyzeIncident() {
 
   }
 
-
-
   return (
 
     <>
-      <Header />
       <LoadingOverlay open={loading} />
-      
+
       <Container
         maxWidth="xl"
         sx={{ mt: 4 }}
@@ -65,7 +61,7 @@ export default function AnalyzeIncident() {
 
         <Grid container spacing={3}>
 
-          <Grid xs={12} lg={6}>
+          <Grid size={{ xs: 12, lg: 6 }}>
 
             <IncidentForm
               loading={loading}
@@ -74,11 +70,11 @@ export default function AnalyzeIncident() {
 
           </Grid>
 
-          <Grid xs={12} lg={6}>
+          <Grid size={{ xs: 12, lg: 6 }}>
 
-             <IncidentReport
-                analysis={analysis}
-              />
+            <IncidentReport
+              analysis={analysis}
+            />
 
           </Grid>
 
@@ -87,51 +83,49 @@ export default function AnalyzeIncident() {
         {incidentId && (
 
           <Paper
-              sx={{
-                  p: 3,
-                  mt: 3
-              }}
+            sx={{
+              p: 3,
+              mt: 3
+            }}
           >
 
-              <Typography
-                  color="success.main"
-                  gutterBottom
-              >
+            <Typography
+              color="success.main"
+              gutterBottom
+            >
 
-                  ✓ Incident created successfully.
+              ✓ Incident created successfully.
 
-              </Typography>
+            </Typography>
 
-              <Button
-                  variant="contained"
-                  sx={{ mr: 2 }}
-                  onClick={() =>
-                      navigate(`/incidents/${incidentId}`)
-                  }
-              >
+            <Button
+              variant="contained"
+              sx={{ mr: 2 }}
+              onClick={() =>
+                navigate(`/incidents/${incidentId}`)
+              }
+            >
 
-                  View Incident
+              View Incident
 
-              </Button>
+            </Button>
 
-              <Button
-                  variant="outlined"
-                  onClick={() =>
-                      navigate("/")
-                  }
-              >
+            <Button
+              variant="outlined"
+              onClick={() =>
+                navigate("/")
+              }
+            >
 
-                  Back to Dashboard
+              Back to Dashboard
 
-              </Button>
+            </Button>
 
           </Paper>
 
-  )}
+        )}
 
       </Container>
-
-      
 
     </>
 

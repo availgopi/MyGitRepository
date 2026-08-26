@@ -9,7 +9,7 @@ import {
 
 import { useParams, useNavigate } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 
 import { useEffect, useState } from "react";
 import { getIncident } from "../services/incidentDetailsService";
@@ -159,7 +159,7 @@ export default function IncidentDetails() {
 
     return (
         <>
-            <Header />
+            {/* <Header /> */}
 
             <Container
                 sx={{
@@ -183,7 +183,7 @@ export default function IncidentDetails() {
     return (
 
         <>
-            <Header />
+            {/* <Header /> */}
 
             <LoadingOverlay
                 open={processing}
@@ -198,7 +198,7 @@ export default function IncidentDetails() {
                 <Paper sx={{ p: 4 }}>
 
                     <Typography variant="h4" gutterBottom>
-                        Incident Details
+                        Incident Intelligence Report
                     </Typography>
 
                     <Typography sx={{ mt: 3 }}>
@@ -228,7 +228,11 @@ export default function IncidentDetails() {
                     </Typography>
 
                     <Paper variant="outlined" sx={{ p: 2, mt: 1 }}>
-                        <Typography whiteSpace="pre-wrap">
+                        <Typography
+                            sx={{
+                                whiteSpace: "pre-wrap"
+                            }}
+                        >
                             {incident.log}
                         </Typography>
                     </Paper>
@@ -238,7 +242,11 @@ export default function IncidentDetails() {
                     </Typography>
 
                     <Paper variant="outlined" sx={{ p: 2, mt: 1 }}>
-                        <Typography whiteSpace="pre-wrap">
+                        <Typography
+                            sx={{
+                                whiteSpace: "pre-wrap"
+                            }}
+                        >
                             {incident.report}
                         </Typography>
                     </Paper>
@@ -296,7 +304,11 @@ export default function IncidentDetails() {
                                 variant="outlined"
                                 sx={{ p: 2, mt: 1 }}
                             >
-                                <Typography whiteSpace="pre-wrap">
+                                <Typography
+                                    sx={{
+                                        whiteSpace: "pre-wrap"
+                                    }}
+                            >
                                     {incident.rejection_reason}
                                 </Typography>
                             </Paper>

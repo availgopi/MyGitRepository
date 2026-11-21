@@ -1,0 +1,49 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend dependencies
+node_modules/
+frontend/node_modules/
+
+# Frontend build output
+dist/
+frontend/dist/
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Uploaded documents and runtime data
+backend/uploads/
+backend/data/documents.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/

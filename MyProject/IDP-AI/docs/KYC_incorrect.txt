@@ -1,0 +1,17 @@
+**CUSTOMER KYC / IDENTITY VERIFICATION FORM**
+
+**Document Type:** KYC Identity Document
+
+**Customer Name:** Arjun Mehta
+
+**Date of Birth:** 15 March 1992
+
+**Document Number:** KYC-PAS-2026-45821
+
+**Address:** 24 Lake View Road, Bengaluru, Karnataka, India
+
+**Purpose:** Customer identity verification for account registration.
+
+**Declaration:** I confirm that the information provided above is accurate and submitted for identity verification.
+
+**Status:** Submitted for verification
